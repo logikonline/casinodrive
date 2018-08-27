@@ -1,0 +1,1274 @@
+{
+  "contractName": "Members",
+  "abi": [],
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820c993e8f8469ea1fc16f284d10510403f66e40a6c1054f057d04c74afbef1513c0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820c993e8f8469ea1fc16f284d10510403f66e40a6c1054f057d04c74afbef1513c0029",
+  "sourceMap": "27:703:1:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "27:703:1:-;;;;;;;;",
+  "source": "pragma solidity ^0.4.17;\n\n\nlibrary Members {\n    \n    enum passengerState { Waiting, Pending, PendingCancel, Riding, Completed, Canceled }\n    \n    enum driverState { Waiting, Pending, PendingCancel, Driving, Arrived, Canceled }\n    \n    struct Driver {\n        string name;\n        driverState state;\n        uint accepttime;\n        address user;\n        bool isActive;\n        address passenger;\n        uint listPointer;\n    }\n    \n    struct Passenger {\n        string name;\n        passengerState state;\n        string destination;\n        uint destprice;\n        uint pickup;\n        uint desttime;\n        uint asktime;\n        address user;\n        bool isActive;\n        address driver;\n        uint listPointer;\n    }\n}\n",
+  "sourcePath": "/Users/blockchain/casinocommute/contracts/Members.sol",
+  "ast": {
+    "absolutePath": "/Users/blockchain/casinocommute/contracts/Members.sol",
+    "exportedSymbols": {
+      "Members": [
+        1449
+      ]
+    },
+    "id": 1450,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1396,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1449,
+        "linearizedBaseContracts": [
+          1449
+        ],
+        "name": "Members",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Members.passengerState",
+            "id": 1403,
+            "members": [
+              {
+                "id": 1397,
+                "name": "Waiting",
+                "nodeType": "EnumValue",
+                "src": "76:7:1"
+              },
+              {
+                "id": 1398,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "85:7:1"
+              },
+              {
+                "id": 1399,
+                "name": "PendingCancel",
+                "nodeType": "EnumValue",
+                "src": "94:13:1"
+              },
+              {
+                "id": 1400,
+                "name": "Riding",
+                "nodeType": "EnumValue",
+                "src": "109:6:1"
+              },
+              {
+                "id": 1401,
+                "name": "Completed",
+                "nodeType": "EnumValue",
+                "src": "117:9:1"
+              },
+              {
+                "id": 1402,
+                "name": "Canceled",
+                "nodeType": "EnumValue",
+                "src": "128:8:1"
+              }
+            ],
+            "name": "passengerState",
+            "nodeType": "EnumDefinition",
+            "src": "54:84:1"
+          },
+          {
+            "canonicalName": "Members.driverState",
+            "id": 1410,
+            "members": [
+              {
+                "id": 1404,
+                "name": "Waiting",
+                "nodeType": "EnumValue",
+                "src": "167:7:1"
+              },
+              {
+                "id": 1405,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "176:7:1"
+              },
+              {
+                "id": 1406,
+                "name": "PendingCancel",
+                "nodeType": "EnumValue",
+                "src": "185:13:1"
+              },
+              {
+                "id": 1407,
+                "name": "Driving",
+                "nodeType": "EnumValue",
+                "src": "200:7:1"
+              },
+              {
+                "id": 1408,
+                "name": "Arrived",
+                "nodeType": "EnumValue",
+                "src": "209:7:1"
+              },
+              {
+                "id": 1409,
+                "name": "Canceled",
+                "nodeType": "EnumValue",
+                "src": "218:8:1"
+              }
+            ],
+            "name": "driverState",
+            "nodeType": "EnumDefinition",
+            "src": "148:80:1"
+          },
+          {
+            "canonicalName": "Members.Driver",
+            "id": 1425,
+            "members": [
+              {
+                "constant": false,
+                "id": 1412,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "262:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1411,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "262:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1414,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "283:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_driverState_$1410",
+                  "typeString": "enum Members.driverState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1413,
+                  "name": "driverState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1410,
+                  "src": "283:11:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_driverState_$1410",
+                    "typeString": "enum Members.driverState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1416,
+                "name": "accepttime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "310:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1415,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "310:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1418,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "335:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1417,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "335:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1420,
+                "name": "isActive",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "357:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1419,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "357:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1422,
+                "name": "passenger",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "380:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1421,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "380:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1424,
+                "name": "listPointer",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "407:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1423,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "407:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Driver",
+            "nodeType": "StructDefinition",
+            "scope": 1449,
+            "src": "238:192:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Members.Passenger",
+            "id": 1448,
+            "members": [
+              {
+                "constant": false,
+                "id": 1427,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "467:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1426,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "467:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1429,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "488:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_passengerState_$1403",
+                  "typeString": "enum Members.passengerState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1428,
+                  "name": "passengerState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1403,
+                  "src": "488:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_passengerState_$1403",
+                    "typeString": "enum Members.passengerState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1431,
+                "name": "destination",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "518:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1430,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "518:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1433,
+                "name": "destprice",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "546:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1432,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "546:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1435,
+                "name": "pickup",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "570:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1434,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "570:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1437,
+                "name": "desttime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "591:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1436,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "591:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1439,
+                "name": "asktime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "614:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1438,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "614:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1441,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "636:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1440,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "636:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1443,
+                "name": "isActive",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "658:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1442,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "658:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1445,
+                "name": "driver",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "681:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1444,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "681:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1447,
+                "name": "listPointer",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "705:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1446,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "705:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Passenger",
+            "nodeType": "StructDefinition",
+            "scope": 1449,
+            "src": "440:288:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1450,
+        "src": "27:703:1"
+      }
+    ],
+    "src": "0:731:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/blockchain/casinocommute/contracts/Members.sol",
+    "exportedSymbols": {
+      "Members": [
+        1449
+      ]
+    },
+    "id": 1450,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1396,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1449,
+        "linearizedBaseContracts": [
+          1449
+        ],
+        "name": "Members",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Members.passengerState",
+            "id": 1403,
+            "members": [
+              {
+                "id": 1397,
+                "name": "Waiting",
+                "nodeType": "EnumValue",
+                "src": "76:7:1"
+              },
+              {
+                "id": 1398,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "85:7:1"
+              },
+              {
+                "id": 1399,
+                "name": "PendingCancel",
+                "nodeType": "EnumValue",
+                "src": "94:13:1"
+              },
+              {
+                "id": 1400,
+                "name": "Riding",
+                "nodeType": "EnumValue",
+                "src": "109:6:1"
+              },
+              {
+                "id": 1401,
+                "name": "Completed",
+                "nodeType": "EnumValue",
+                "src": "117:9:1"
+              },
+              {
+                "id": 1402,
+                "name": "Canceled",
+                "nodeType": "EnumValue",
+                "src": "128:8:1"
+              }
+            ],
+            "name": "passengerState",
+            "nodeType": "EnumDefinition",
+            "src": "54:84:1"
+          },
+          {
+            "canonicalName": "Members.driverState",
+            "id": 1410,
+            "members": [
+              {
+                "id": 1404,
+                "name": "Waiting",
+                "nodeType": "EnumValue",
+                "src": "167:7:1"
+              },
+              {
+                "id": 1405,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "176:7:1"
+              },
+              {
+                "id": 1406,
+                "name": "PendingCancel",
+                "nodeType": "EnumValue",
+                "src": "185:13:1"
+              },
+              {
+                "id": 1407,
+                "name": "Driving",
+                "nodeType": "EnumValue",
+                "src": "200:7:1"
+              },
+              {
+                "id": 1408,
+                "name": "Arrived",
+                "nodeType": "EnumValue",
+                "src": "209:7:1"
+              },
+              {
+                "id": 1409,
+                "name": "Canceled",
+                "nodeType": "EnumValue",
+                "src": "218:8:1"
+              }
+            ],
+            "name": "driverState",
+            "nodeType": "EnumDefinition",
+            "src": "148:80:1"
+          },
+          {
+            "canonicalName": "Members.Driver",
+            "id": 1425,
+            "members": [
+              {
+                "constant": false,
+                "id": 1412,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "262:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1411,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "262:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1414,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "283:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_driverState_$1410",
+                  "typeString": "enum Members.driverState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1413,
+                  "name": "driverState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1410,
+                  "src": "283:11:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_driverState_$1410",
+                    "typeString": "enum Members.driverState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1416,
+                "name": "accepttime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "310:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1415,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "310:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1418,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "335:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1417,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "335:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1420,
+                "name": "isActive",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "357:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1419,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "357:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1422,
+                "name": "passenger",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "380:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1421,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "380:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1424,
+                "name": "listPointer",
+                "nodeType": "VariableDeclaration",
+                "scope": 1425,
+                "src": "407:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1423,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "407:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Driver",
+            "nodeType": "StructDefinition",
+            "scope": 1449,
+            "src": "238:192:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Members.Passenger",
+            "id": 1448,
+            "members": [
+              {
+                "constant": false,
+                "id": 1427,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "467:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1426,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "467:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1429,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "488:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_passengerState_$1403",
+                  "typeString": "enum Members.passengerState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1428,
+                  "name": "passengerState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1403,
+                  "src": "488:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_passengerState_$1403",
+                    "typeString": "enum Members.passengerState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1431,
+                "name": "destination",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "518:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1430,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "518:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1433,
+                "name": "destprice",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "546:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1432,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "546:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1435,
+                "name": "pickup",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "570:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1434,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "570:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1437,
+                "name": "desttime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "591:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1436,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "591:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1439,
+                "name": "asktime",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "614:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1438,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "614:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1441,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "636:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1440,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "636:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1443,
+                "name": "isActive",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "658:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1442,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "658:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1445,
+                "name": "driver",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "681:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1444,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "681:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1447,
+                "name": "listPointer",
+                "nodeType": "VariableDeclaration",
+                "scope": 1448,
+                "src": "705:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1446,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "705:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Passenger",
+            "nodeType": "StructDefinition",
+            "scope": 1449,
+            "src": "440:288:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1450,
+        "src": "27:703:1"
+      }
+    ],
+    "src": "0:731:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xd3f4443205851847f1a29fbb595ab52396279b00",
+      "transactionHash": "0x9c77ab41b66c7021ab8966140793b04520209f4e085938cb2e97b07a3a8ff607"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-27T02:44:34.757Z"
+}

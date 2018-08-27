@@ -1,0 +1,22 @@
+{
+  "name": "casinodrive",
+  "version": "1.0.0",
+  "description": "## What it does Casino Drive is a community Uber-esque solution for a local casino that wants to provide their gamblers with rides after a long night of action. Only allowing drivers the ability to travel to a few preset locations, the solution negotaites the driver/passenger handshake",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "1.12.0"
+  },
+  "keywords": []
+}
