@@ -15,11 +15,15 @@ Truffle should be installed properly on your machine.   See the above link for h
 
 Ganache-cli should be installed properly on your machine.  See the above link for how to do this.  The GUI Ganache can also be used.
 
-3. project files (this git collection) in a local directory.  (if you are reading this you should have access.)
+3. Install lite-server https://www.npmjs.com/package/lite-server
+
+Lite-Server should be installed properly to enable thew web portion.
+
+4. project files (this git collection) in a local directory.  (if you are reading this you should have access.)
 
 Unzip/Clone the Repository to a local directory
 
-4. MetaMask install - https://metamask.io/
+5. MetaMask install - https://metamask.io/
 
 Install MetaMask.  See above link for how to do this.
 

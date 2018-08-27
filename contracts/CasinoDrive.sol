@@ -8,7 +8,7 @@ import "./EthWallet.sol";
  * @title CasinoDrive
  * @dev Provides driver and passenger operations for negotiating trips.
  */
-contract CasinoDrive {
+contract CasinoDrive is Pausable {
     
     event WalletBalance(uint amount);
 
@@ -38,7 +38,6 @@ contract CasinoDrive {
     // @dev Constructor, sets creator to owner
     //
     constructor() public {
-        owner = msg.sender;
     }
 
     // @dev get the owner of the contract
@@ -78,7 +77,7 @@ contract CasinoDrive {
 
     // @dev adds a new driver - will not add more if paused
     // @param name of driver
-    function addDriverRequest(string name) public  { //whenNotPaused
+    function addDriverRequest(string name) public whenNotPaused  { //
         
         if(isDriver(msg.sender)) revert();
         Members.Driver storage sender = drivers[msg.sender];
@@ -264,7 +263,7 @@ contract CasinoDrive {
     // @dev Driver accepts passenger request
     // @param aPassenger as the passenger address
     // @returns bool if successful
-    function acceptPassengerRequest(address aPassenger) public returns(bool) { //whenNotPaused
+    function acceptPassengerRequest(address aPassenger) public whenNotPaused returns(bool) { //
         
         if(!isDriver(msg.sender)) revert();
         if(!isPassenger(aPassenger)) revert();
@@ -344,7 +343,7 @@ contract CasinoDrive {
     // @param destprice in wei for trip
     // @param desttime in minutes for trip
     // @param asktime original time requested
-    function addPassengerRequest(string name, string desitnation, uint destprice, uint desttime, uint asktime) public { //whenNotPaused
+    function addPassengerRequest(string name, string desitnation, uint destprice, uint desttime, uint asktime) public whenNotPaused { //
         
         if(isPassenger(msg.sender)) revert();
         Members.Passenger storage sender = passengers[msg.sender];
