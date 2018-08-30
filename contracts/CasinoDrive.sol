@@ -343,7 +343,7 @@ contract CasinoDrive is Pausable {
     // @param destprice in wei for trip
     // @param desttime in minutes for trip
     // @param asktime original time requested
-    function addPassengerRequest(string name, string desitnation, uint destprice, uint desttime, uint asktime) public whenNotPaused { //
+    function addPassengerRequest(string name, string desitnation, uint destprice, uint desttime, uint asktime) public payable whenNotPaused { //
         
         if(isPassenger(msg.sender)) revert();
         Members.Passenger storage sender = passengers[msg.sender];
